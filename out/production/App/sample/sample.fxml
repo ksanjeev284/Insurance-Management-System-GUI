@@ -5,51 +5,66 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Glow?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-<HBox fx:id="hbox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="600.0" minWidth="800.0" prefHeight="607.0" prefWidth="956.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
-    <children>
-        <TableView prefHeight="607.0" prefWidth="517.0">
-            <columns>
-                <TableColumn fx:id="policyNumber" prefWidth="63.0" text="P No." />
-                <TableColumn fx:id="customerName" prefWidth="54.0" text="Name" />
-                <TableColumn fx:id="customerMobile" prefWidth="71.0" text="Mobile" />
-                <TableColumn fx:id="customerpolicyType" prefWidth="84.0" text="Policy" />
-                <TableColumn fx:id="customerAddress" minWidth="0.0" prefWidth="131.0" text="Address" />
-                <TableColumn fx:id="customerPayment" minWidth="12.0" prefWidth="98.0" text="Payment" />
-            </columns>
-        </TableView>
-        <Pane fx:id="pane" prefHeight="400.0" prefWidth="445.0">
-            <children>
-                <Button fx:id="add" layoutX="108.0" layoutY="493.0" mnemonicParsing="false" onMouseClicked="#clicked" text="Add" />
-                <Button fx:id="delete" layoutX="221.0" layoutY="493.0" mnemonicParsing="false" text="Delete" />
-                <Button fx:id="change" layoutX="327.0" layoutY="493.0" mnemonicParsing="false" text="Change" />
-                <Label layoutX="53.0" layoutY="58.0" text="Name" />
-                <Label layoutX="49.0" layoutY="103.0" text="Mobile" />
-                <Label layoutX="52.0" layoutY="148.0" text="Policy" />
-                <Label layoutX="45.0" layoutY="200.0" text="Address" />
-                <Label layoutX="43.0" layoutY="242.0" text="Payment" />
-                <TextField fx:id="name" layoutX="141.0" layoutY="53.0" />
-                <TextField fx:id="mobile" layoutX="141.0" layoutY="98.0" />
-                <TextField fx:id="address" layoutX="141.0" layoutY="195.0" />
-                <TextField fx:id="payment" layoutX="141.0" layoutY="237.0" />
-                <ComboBox fx:id="policySelector" layoutX="141.0" layoutY="143.0" prefHeight="31.0" prefWidth="178.0" promptText="choose">
-                    <items>
-                        <FXCollections fx:factory="observableArrayList">
-                            <String fx:value="Liability coverage" />
-                            <String fx:value="Collision insurance" />
-                            <String fx:value="Comprehensive Uninsured motorist insurance" />
-                            <String fx:value="Underinsured motorist insurance" />
-                            <String fx:value="Medical payments coverage" />
-                            <String fx:value="Personal injury protection insurance" />
-                        </FXCollections>
-                    </items>
-                </ComboBox>
-            </children>
-        </Pane>
-    </children>
-</HBox>
+<Pane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="858.0" prefWidth="1494.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <Pane fx:id="child" layoutX="14.0" layoutY="16.0" prefHeight="711.0" prefWidth="352.0">
+         <children>
+            <Button fx:id="delete" layoutX="141.0" layoutY="347.0" mnemonicParsing="false" onMouseClicked="#show" text="Delete" />
+            <Button fx:id="change" layoutX="256.0" layoutY="347.0" mnemonicParsing="false" text="Change" />
+            <Label layoutX="53.0" layoutY="58.0" text="Name" />
+            <Label layoutX="49.0" layoutY="103.0" text="Mobile" />
+            <Label layoutX="52.0" layoutY="148.0" text="Policy" />
+            <Label layoutX="45.0" layoutY="200.0" text="Address" />
+            <Label layoutX="43.0" layoutY="242.0" text="Payment" />
+            <TextField fx:id="name" layoutX="141.0" layoutY="53.0" />
+            <TextField fx:id="mobile" layoutX="141.0" layoutY="98.0" />
+            <TextField fx:id="address" layoutX="141.0" layoutY="195.0" />
+            <TextField fx:id="payment" layoutX="141.0" layoutY="237.0" />
+            <ComboBox fx:id="policySelector" layoutX="141.0" layoutY="143.0" prefHeight="31.0" prefWidth="178.0" promptText="choose">
+               <items>
+                  <FXCollections fx:factory="observableArrayList">
+                     <String fx:value="Liability coverage" />
+                     <String fx:value="Collision insurance" />
+                     <String fx:value="Comprehensive Uninsured motorist " />
+                     <String fx:value="Underinsured motorist " />
+                     <String fx:value="Medical payments coverage" />
+                     <String fx:value="Personal injury protection" />
+                  </FXCollections>
+               </items>
+            </ComboBox>
+            <Button fx:id="add" layoutX="47.0" layoutY="347.0" mnemonicParsing="false" onMouseClicked="#clicked" text="Add" />
+         </children>
+      </Pane>
+      <HBox fx:id="hbox" layoutX="373.0" layoutY="61.0" prefHeight="740.0" prefWidth="1096.0">
+         <children>
+            <ListView fx:id="listViewID" prefHeight="740.0" prefWidth="52.0" />
+            <ListView fx:id="listViewName" prefHeight="674.0" prefWidth="138.0" />
+            <ListView fx:id="listViewNumber" prefHeight="671.0" prefWidth="131.0" />
+            <ListView fx:id="listViewPolicyType" prefHeight="740.0" prefWidth="320.0" />
+            <ListView fx:id="listViewAddress" prefHeight="740.0" prefWidth="285.0" />
+            <ListView fx:id="listViewPayment" prefHeight="674.0" prefWidth="177.0" />
+         </children>
+      </HBox>
+      <Label layoutX="465.0" layoutY="40.0" prefHeight="21.0" prefWidth="47.0" text="Name" />
+      <Label layoutX="568.0" layoutY="40.0" text="Phoner Number" />
+      <Label layoutX="735.0" layoutY="40.0" prefHeight="21.0" prefWidth="81.0" text="Policy Type" />
+      <Label layoutX="1114.0" layoutY="40.0" text="Address" />
+      <Label layoutX="1339.0" layoutY="40.0" text="Payment" />
+      <Label layoutX="388.0" layoutY="40.0" text="ID" />
+      <Label fx:id="message" graphicTextGap="10.0" layoutX="367.0" layoutY="813.0" prefHeight="21.0" prefWidth="911.0" textAlignment="CENTER">
+         <font>
+            <Font size="21.0" />
+         </font>
+         <effect>
+            <Glow level="0.14" />
+         </effect>
+      </Label>
+   </children>
+</Pane>
