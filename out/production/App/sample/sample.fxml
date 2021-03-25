@@ -16,8 +16,8 @@
    <children>
       <Pane fx:id="child" layoutX="14.0" layoutY="16.0" prefHeight="711.0" prefWidth="352.0">
          <children>
-            <Button fx:id="delete" layoutX="141.0" layoutY="347.0" mnemonicParsing="false" onMouseClicked="#show" text="Delete" />
-            <Button fx:id="change" layoutX="256.0" layoutY="347.0" mnemonicParsing="false" text="Change" />
+            <Button fx:id="delete" layoutX="141.0" layoutY="347.0" mnemonicParsing="false" onMouseClicked="#delete" text="Delete" />
+            <Button fx:id="change" layoutX="256.0" layoutY="347.0" mnemonicParsing="false" onMouseClicked="#changed" text="Change" />
             <Label layoutX="53.0" layoutY="58.0" text="Name" />
             <Label layoutX="49.0" layoutY="103.0" text="Mobile" />
             <Label layoutX="52.0" layoutY="148.0" text="Policy" />
