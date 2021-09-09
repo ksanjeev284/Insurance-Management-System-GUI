@@ -1,2 +1,2 @@
-# Insurance Mangament System GUI 
- Insurance Mangament System GUI using mySQL database
+# Insurance Management System GUI 
+ Insurance Management System GUI using mySQL database
